@@ -36,31 +36,32 @@ class App extends React.Component {
     let magnets = this.state.magnets.map(magnet => {
       return(
         <div>
-          <Word
-            key={magnet}
-            body={magnet}
-            />
+          <Draggable
+            axis="both"
+            handle=".magnet"
+            defaultPosition={{x: 0, y: 0}}
+            position={null}
+            grid={[25, 25]}
+            zIndex={100}
+            onStart={this.handleStart}
+            onDrag={this.handleDrag}
+            onStop={this.handleStop}>
+            <div>
+              <Word
+                key={magnet}
+                body={magnet}
+                />
+            </div>
+          </Draggable>
         </div>
-      ).bind(this)
+      )
     })
 
     return(
       <div>
-        <Draggable
-          axis="x"
-          handle=".magnet"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[25, 25]}
-          zIndex={100}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}>
         <div className="magnet">
           {magnets}
         </div>
-        </Draggable>
-
         <Button handleNewWordClick={this.handleNewWordClick}/>
       </div>
     );
