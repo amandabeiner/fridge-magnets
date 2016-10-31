@@ -12,6 +12,8 @@ class App extends React.Component {
     };
 
     this.handleNewWordClick = this.handleNewWordClick.bind(this);
+
+    this.handleClearClick = this.handleClearClick.bind(this);
   }
 
   handleNewWordClick(event){
@@ -30,6 +32,11 @@ class App extends React.Component {
       xhr.setRequestHeader("X-Mashape-Authorization", "MKUEGhHO8OmshoWMUCPKmbuq7xeHp1EXgItjsnmPOlGC4cBUMl")}
     })
 
+  };
+
+  handleClearClick(event){
+    let emptyArray = []
+    this.setState({ magnets: emptyArray });
   };
 
   render(){
@@ -59,10 +66,12 @@ class App extends React.Component {
 
     return(
       <div>
-        <div className="magnet">
+        <Button handleNewWordClick={this.handleNewWordClick}
+        handleClearClick={this.handleClearClick}
+        />
+        <div>
           {magnets}
         </div>
-        <Button handleNewWordClick={this.handleNewWordClick}/>
       </div>
     );
   }
