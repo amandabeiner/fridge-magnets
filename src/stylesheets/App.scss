@@ -1,1 +1,48 @@
 /* YOUR STYLING HERE */
+body {
+  background: url('http://www.cutpricewallpaper.co.uk/wp-content/uploads/2014/06/89191-300x300.jpg');
+}
+
+.magnet {
+  background-color: black;
+  color:white;
+  display: inline-block;
+  padding: 2px;
+  font-family: 'Courier New', serif;
+  font-weight: bold;
+  box-shadow: 1px;
+}
+
+img {
+  float: right;
+  margin-right: 5%;
+}
+
+.button-space {
+  background-color: #DC5B3E;
+  height: 500p;
+  float:left;
+  margin: 5%;
+  max-width: 40%;
+
+}
+
+.button-space h1, h2 {
+  text-align: center;
+  font-family: 'Courier New', serif;
+  color: white;
+}
+
+.btn {
+  background-color: #C2C092;
+  padding: 10px;
+  font-family: 'Courier New', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.btn-container {
+  margin: auto;
+  text-align: center;
+}
